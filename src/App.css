@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Fira+Code:wght@300&display=swap');
+
+* {
+  font-family: 'Fira Code', monospace;
+  background: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+main,
+.calc-wrapper {
+  height: 100% !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  border: none;
+  font-size: 1.3rem;
+  margin: 0.4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Calculator */
+
+.calc-wrapper {
+  width: 100%;
+}
+
+.calc-wrapper,
+.calc-display {
+  padding: 0.5rem;
+}
+
+/* Calculator Display */
+
+.calc-display {
+  color: #fff;
+  font-size: 3rem;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+/* Calculator keys wrapper */
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  justify-items: center;
+}
+
+/* Topbar */
+
+.topbar,
+.numeric {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.topbar > button {
+  background: #d4d4d2; /* Light gray */
+}
+
+/* Sidebar */
+
+.sidebar {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: grid;
+}
+
+.sidebar > button {
+  background: #ff9500; /* Orange */
+  color: #fff;
+}
+
+/* Numeric keys */
+
+.numeric > button {
+  background: #505050; /* Dark Gray */
+  color: #fff;
+}
+
+/* Zero button */
+
+.zero {
+  grid-column: 1 / span 2;
+  width: 122.8px;
+  border-radius: 50px;
+}
+
+/* Operators */
+
+.highlight {
+  background-color: #fff !important;
+  color: #ff9500 !important; /* Orange */
 }
